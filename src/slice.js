@@ -16,17 +16,17 @@ const initialState= {
         state.todolist.push(action.payload)
       },
       checkboxclicked:(state,action)=>{
-      state.todolist.map(e=>e.Title===action.payload? ((e.checked=!e.checked)|(e.Done=!e.Done)):e)
+      state.todolist.map(e=>e.id===action.payload? ((e.checked=!e.checked)|(e.Done=!e.Done)):e)
       },
       Delete:(state,action)=>{
        
-        state.todolist=state.todolist.filter((e)=>e.Title!==action.payload);
+        state.todolist=state.todolist.filter((e)=>e.id!==action.payload);
       },
       handleshow:(state,action)=>{
-        state.todolist.map(e=>e.Title===action.payload? e.show=!e.show:e);
+        state.todolist.map(e=>e.id===action.payload? e.show=!e.show:e);
 
       }, handlechange:(state,action)=>{
-        state.todolist.map(e=>e.Title===action.payload[1]? e.Title=action.payload[0]:e)
+        state.todolist.map(e=>e.id===action.payload[1]? e.Title=action.payload[0]:e)
       }
   
   }

@@ -6,7 +6,7 @@ function Filter({handleClick,todolist,handleDelete,handleshow,handlechange}) {
     
   return (
     
-    todolist.map((e,i)=>{return <Component handlechange={handlechange} show={todolist[i].show} handleshow={handleshow} handleDelete={handleDelete} handleClick={handleClick} Title={todolist[i].Title}checked={todolist[i].checked} />})
+    todolist.map((e,i)=>{return <Component id={todolist[i].id} handlechange={handlechange} show={todolist[i].show} handleshow={handleshow} handleDelete={handleDelete} handleClick={handleClick} Title={todolist[i].Title}checked={todolist[i].checked} />})
  
   )
 }
