@@ -11,7 +11,7 @@ function Component({ checked, Title, handleClick, handleDelete, show,handleshow,
   return (
     <div class="container5" >
 
-      {!show && <input onChange={(e)=>handlechange(e)} class="modifier" defaultValue={Title}></input>}
+      {!show && <input onChange={(e)=>handlechange(e,Title)} class="modifier" defaultValue={Title}></input>}
       {show && <p style={checked == true ? { textDecoration: "line-through" } : null}>{Title}</p>}
       <Checkbox style={{ marginRight: "-0cm" }} size="large" name={Title} onClick={(e) => handleClick(e)} checked={checked} {...label} />
       <button name={Title} onClick={() => handleDelete(Title)} type="button" style={deletex}>

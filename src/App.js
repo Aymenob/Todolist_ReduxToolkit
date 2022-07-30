@@ -11,9 +11,10 @@ function App() {
   const todolist=useSelector((state)=>state.counter.todolist);
   const [Typed,updateTyped]=useState("")
   const [section,updatesection]=useState("")
- const  [Typedx,updateTypedx]=useState("")
+
+
   console.log(todolist)
-  console.log(Typedx)
+ 
   
   return (
     <div class="container1"> 
@@ -26,7 +27,7 @@ function App() {
     <Navbar updatesection1={()=>updatesection("")} updatesection2={(e)=>updatesection("Done")} updatesection3={(e)=>updatesection("Undone")}/>
     </div>
     <div class="container4" >
-    <Filter handlechange={(e)=>updateTypedx(e.target.value)} handleshow={(Title)=>dispatch(handleshow([Title,Typedx]))} handleDelete={(Title)=>dispatch(Delete(Title))} todolist={section==="Done"?todolist.filter(e=>e.Done===true):section==="Undone"?todolist.filter(e=>e.Done===false):section===""?todolist:todolist} handleClick={(e)=>dispatch(checkboxclicked(e.target.name))}/>
+    <Filter handlechange={(e,Title)=>dispatch(handlechange([e.target.value,Title]))} handleshow={(Title)=>dispatch(handleshow(Title))} handleDelete={(Title)=>dispatch(Delete(Title))} todolist={section==="Done"?todolist.filter(e=>e.Done===true):section==="Undone"?todolist.filter(e=>e.Done===false):section===""?todolist:todolist} handleClick={(e)=>dispatch(checkboxclicked(e.target.name))}/>
     </div>
     </div>
   );
