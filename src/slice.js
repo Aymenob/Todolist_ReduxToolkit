@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 const initialState= {
-    todolist:[{id:Math.random(),Title:"kiss mama on the cheek",checked:false,Done:false},{id:Math.random(),Title:"kiss papa on the cheek",checked:false,Done:false}]
+    todolist:[{id:Math.random(),Title:"drink coffee!",checked:false,Done:false,show:true}]
 }
   
   export const counterSlice = createSlice({
@@ -21,9 +21,14 @@ const initialState= {
       Delete:(state,action)=>{
        
         state.todolist=state.todolist.filter((e)=>e.Title!==action.payload);
+      },
+      handleshow:(state,action)=>{
+        state.todolist.map(e=>e.Title===action.payload[0]? ((e.show=!e.show)&&(e.Title=action.payload[1])):e);
+
       }
+  
   }
 })
-export const { addTodoList,increment,checkboxclicked,Delete} = counterSlice.actions
+export const { addTodoList,increment,checkboxclicked,Delete,handleshow,handlechange} = counterSlice.actions
 
 export default counterSlice.reducer

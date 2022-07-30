@@ -37,6 +37,7 @@ background-color: rgb(45, 9, 122);
   border:solid 2px;
   background-color: rgba(255, 160, 7, 0.983);
   border-radius: 7px;overflow-y: auto;
+  min-width:13.5cm;
 }
 .container5{
   
