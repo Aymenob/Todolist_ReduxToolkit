@@ -1,6 +1,5 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { createSlice } from '@reduxjs/toolkit';
 import { useSelector,useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addTodoList,checkboxclicked,Delete,handlechange,handleshow} from './slice';
