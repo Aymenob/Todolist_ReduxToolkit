@@ -16,7 +16,7 @@ function App() {
 
   return (
 
-    <div class="container1">
+    <div  class="container1">
       <AddTodobar value={Typed} handleonchange={(e) => updateTyped(e.target.value)} handlekeydown={(e) => e.keyCode === 13 ? Typed === "" ? alert("your todo is empty") : dispatch(addTodoList({ id: Math.random(), Title: Typed, checked: false, Done: false, show: true })) && updateTyped("") : NaN} handleonclick={(e) => Typed === "" ? alert("your todo is empty") : dispatch(addTodoList({ id: Math.random(), Title: Typed, checked: false, Done: false, show: true })) && updateTyped("")} />
       <div class="container3">
         <Navbar updatesection1={() => updatesection("")} updatesection2={(e) => updatesection("Done")} updatesection3={(e) => updatesection("Undone")} />
