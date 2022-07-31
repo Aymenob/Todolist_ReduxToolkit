@@ -13,11 +13,11 @@ function Component({id, checked, Title, handleClick, handleDelete, show,handlesh
 
       {!show && <input onChange={(e)=>handlechange(e,id)} class="modifier" defaultValue={Title}></input>}
       {show && <p style={checked == true ? { textDecoration: "line-through" } : null}>{Title}</p>}
-      <Checkbox style={{ marginRight: "-0cm" }} size="large" name={Title} onClick={() => handleClick(id)} checked={checked} {...label} />
-      <button name={Title} onClick={() => handleDelete(id)} type="button" style={deletex}>
+      <Checkbox style={{ marginRight: "-0cm" }} size="large"  onClick={() => handleClick(id)} checked={checked} {...label} />
+      <button  onClick={() => handleDelete(id)} type="button" style={deletex}>
         <i class="bi bi-trash text-light"></i>
       </button>
-      <button  name={Title} onClick={()=>handleshow(id)} type="button" style={transform}>
+      <button   onClick={()=>handleshow(id)} type="button" style={transform}>
         <i class="bi bi-pencil text-light"></i>
       </button>
 
