@@ -1,12 +1,26 @@
 import Component from './component'
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-function Filter({ handleClick, todolist, handleDelete, handleshow, handlechange,handlekeydown }) {
+
+function Filter() {
+  const todolist = useSelector(state => state.counter.todolist); console.log(todolist)
+  const Section = useSelector(state => state.section.value)
 
   return (
-
-    todolist.map((e, i) => { return <Component id={todolist[i].id} handlechange={handlechange} show={todolist[i].show} handlekeydown={handlekeydown} handleshow={handleshow} handleDelete={handleDelete} handleClick={handleClick} Title={todolist[i].Title} checked={todolist[i].checked} /> })
-
+    <div class="container4" >
+      {
+        Section === "Undone" ?
+          todolist.filter(e => e.Done == false).map((e, i) => <Component id={e.id} show={e.show} Title={e.Title} checked={e.checked} />)
+          :
+          Section === "Done" ?
+            todolist.filter(e => e.Done == true).map((e, i) => <Component id={e.id} show={e.show}  Title={e.Title} checked={e.checked} />)
+            :
+            
+              todolist.map((e, i) => <Component id={e.id} show={e.show}  Title={e.Title} checked={e.checked} />)
+              
+      }
+    </div>
   )
 }
 
