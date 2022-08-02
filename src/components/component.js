@@ -18,7 +18,7 @@ function Component({ id, checked, Title, show}) {
       {show && <p style={checked == true ? { textDecoration: "line-through" } : null}>{Title}</p>}
       <Checkbox size="large" onClick={() => dispatch(checkboxclicked(id))} checked={checked} {...label} />
 
-      <button onClick={() => dispatch(handleshow(id)) && ("Input").current.focus()} type="button" >
+      <button onClick={() => dispatch(handleshow(id))} type="button" >
         {show && <i class="bi bi-pencil text-light"></i>}
         {!show && <i class="bi bi-plus text-light"></i>}
       </button>
